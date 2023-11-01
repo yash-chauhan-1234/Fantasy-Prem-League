@@ -1,10 +1,6 @@
 pipeline {
     agent any
 
-    environment {
-         env.PATH = env.PATH + ";c:\\Windows\\System32"
-     }
-
     stages {
         stage('Checkout') {
             steps {
@@ -16,7 +12,7 @@ pipeline {
             steps {
                 script {
                     // Build the Docker image
-                    def image = docker.build('my-image')
+                    bat 'docker build -t my-image .'
                 }
             }
         }
