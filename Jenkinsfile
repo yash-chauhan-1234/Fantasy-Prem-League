@@ -21,6 +21,7 @@ pipeline {
         stage('Run Docker Container') {
             steps {
                 script {
+                    echo 'running container'
                     // Run the Docker container
                     // bat 'docker run -d -p 8084:80 my-image'
                 }
