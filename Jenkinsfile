@@ -10,20 +10,18 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                echo %PATH%
-                // script {
-                //     // Build the Docker image
-                //     // bat 'docker build -t my-image .'
-                // }
+                script {
+                    // Build the Docker image
+                    bat 'docker build -t my-image .'
+                }
             }
         }
 
         stage('Run Docker Container') {
             steps {
                 script {
-                    echo 'running container'
                     // Run the Docker container
-                    // bat 'docker run -d -p 8084:80 my-image'
+                    bat 'docker run -d -p 8084:80 my-image'
                 }
             }
         }
