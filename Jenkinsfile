@@ -14,8 +14,14 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                bat 'docker-compose up --build -d'
+                bat 'docker build -t my-image .'
             }
-        } 
+        }
+        stage('Run Docker Container') {
+                script {
+                    // Run the Docker container
+                    bat 'docker run -d -p 8080:80 my-image'
+                }
+        }
     }
 }
