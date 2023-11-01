@@ -12,7 +12,7 @@ pipeline {
             steps {
                 script {
                     // Build the Docker image
-                    bat 'docker build -t my-image .'
+                    def image = docker.build('my-image')
                 }
             }
         }
