@@ -18,10 +18,10 @@ pipeline {
             }
         }
         stage('Run Docker Container') {
-                script {
+            steps {
                     // Run the Docker container
                     bat 'docker run -d -p 8080:80 my-image'
-                }
+            }
         }
     }
 }
