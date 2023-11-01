@@ -11,21 +11,27 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    def image = docker.build('fantasy-prem')
+                    // Build the Docker image
+                    bat 'docker build -t my-image .'
                 }
             }
         }
 
         stage('Run Docker Container') {
             steps {
-                sh 'docker run -d -p 8084:80 fantasy-prem'
+                script {
+                    // Run the Docker container
+                    bat 'docker run -d -p 8080:80 my-image'
+                }
             }
         }
     }
 
     post {
-        success {
-            echo 'Pipeline completed successfully!'
+        always {
+            // Cleanup: Stop and remove the container
+            bat 'docker stop my-container || true'
+            bat 'docker rm my-container || true'
         }
     }
 }
