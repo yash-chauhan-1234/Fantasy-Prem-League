@@ -1,9 +1,0 @@
-version: '3'
-services:
-  streamlit:
-    image: streamlit-docker:0.0.1
-    build: .
-    ports:
-      - "8501:8501"
-    volumes:
-      - .:/app
