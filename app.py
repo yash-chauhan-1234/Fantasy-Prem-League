@@ -11,6 +11,22 @@ def callback():
 
 st.set_page_config(layout="wide")
 
+background_image = "/app/app/background.jpg"
+ 
+
+def set_background():
+    style = f"""
+    <style>
+        body {{
+            background-image: url("{background_image}");
+            background-size: cover;
+        }}
+    </style>
+        """
+    st.markdown(style, unsafe_allow_html=True)
+
+set_background()
+
 
 DATA='/app/app/data'
 st.title('Fantasy Premiere League')
