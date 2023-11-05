@@ -22,7 +22,7 @@ pipeline {
             steps {
                 script {
                     // Run the Docker container
-                    bat 'docker run -d -p 8080:80 my-image'
+                    bat 'docker run -d -p 8501:8501 my-image'
                 }
             }
         }
