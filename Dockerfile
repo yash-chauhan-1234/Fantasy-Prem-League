@@ -9,4 +9,4 @@ RUN pip install streamlit
 
 EXPOSE 8501
 
-CMD ["streamlit", "run", "/app/app.py"]
+CMD ["streamlit", "run", "app/app.py"]
