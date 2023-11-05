@@ -12,7 +12,7 @@ def callback():
 st.set_page_config(layout="wide")
 
 
-DATA='D:\College\sem 5\AI\project\data'
+DATA='/app/app/data'
 st.title('Fantasy Premiere League')
 
 week=st.selectbox("Week", ["Week 1","Week 2","Week 3","Week 4"])
